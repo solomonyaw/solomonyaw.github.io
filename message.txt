@@ -1,0 +1,6 @@
+I will like to announce the launch of my official website, thus http://solomonadeklo.me/
+Thanks for GitHub Education for providing me with a free domain name for my portfolio. I have linked my domain to my github repositories so now my github  repos are hosted on my domain.
+
+For example my seeghanatours reopo is hosted on http://solomonadeklo.me/seeghanatours
+
+My portfolio website is a chat bot that makes more interactive to engage my personal portfolio
