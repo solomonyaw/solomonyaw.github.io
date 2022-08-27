@@ -26,6 +26,22 @@ body {
   {
     flex-direction: column;
   }
+
+  .img2
+  {
+    width: 50%;
+    height: 10rem;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .img1
+  {
+    width: 150%;
+    height: 15rem;
+    align-self: center;
+    justify-self: center;
+  }
 }
 
 .check
