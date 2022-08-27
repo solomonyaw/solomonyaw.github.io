@@ -17,6 +17,18 @@ body {
 .img{
   width:40%;
   filter: brightness(60%);
+  border-radius: 100%;
+  transition: all .8s;
+}
+
+.img:hover{
+ 
+  filter: brightness(50%);
+
+  left: 30%;
+  top:20%;
+  transform: scale(1.02);
+ 
 }
 
 a {
