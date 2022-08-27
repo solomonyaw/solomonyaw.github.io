@@ -66,7 +66,7 @@ body {
   border-radius: 100%;
 }
 
-.img:hover{
+.img1:hover,.img2:hover{
  
   filter: brightness(50%);
 
