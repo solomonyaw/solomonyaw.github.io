@@ -16,6 +16,7 @@ body {
 
 .img{
   width:40%;
+  filter: brightness(60%);
 }
 
 a {
