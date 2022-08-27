@@ -4,7 +4,7 @@ body {
 
 #console {
   font-family: courier, monospace;
-  color: #fff;
+  color: #d61790;
   max-width: 750px;
   margin-left: auto;
   margin-right: auto;
@@ -12,6 +12,16 @@ body {
   font-size: 15px;
   font-weight: 400;
   line-height: 1.5;
+}
+
+.check
+{
+  color:#888888
+}
+
+.check:hover
+{
+  color:#dd1d7d
 }
 
 .img{
@@ -45,7 +55,7 @@ a {
 }
 
 #b {
-  color: #926e83;
+  color: #d61790;
 }
 
 #k {
