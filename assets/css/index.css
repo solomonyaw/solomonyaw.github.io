@@ -54,6 +54,16 @@ body {
   color:#dd1d7d
 }
 
+.imglanguages
+{
+  background-color:#fff;
+  padding:0 2rem;
+  padding-top: 1rem;
+  border-radius: 10%;
+   box-shadow: 1rem  1rem 1rem #888888;
+
+}
+
 .img1{
   margin-right: 3rem;
   width:40%;
