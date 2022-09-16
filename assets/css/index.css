@@ -27,6 +27,12 @@ body {
     flex-direction: column;
   }
 
+  .gtdc
+{
+  width:100%;
+  height: 50%;
+}
+
   .img2
   {
     width: 50%;
@@ -54,11 +60,7 @@ body {
   color:#dd1d7d
 }
 
-.gtdc
-{
-  width:70%;
-  height: 50%;
-}
+
 
 .imglanguages
 {
