@@ -2,6 +2,12 @@ body {
   background-color: #000;
 }
 
+.music
+{
+  
+  margin: 0% 0% auto;
+}
+
 #console {
   font-family: courier, monospace;
   color: #d61790;
