@@ -2,6 +2,14 @@ body {
   background-color: #000;
 }
 
+.amalitech
+{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
 .music
 {
   
