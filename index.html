@@ -1,607 +1,510 @@
-<!DOCTYPE html>
-<html lang="en" class="dark">
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Solomon Yaw Adeklo | Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="./src/index.css" />
-    
+    <!-- GSAP -->
+     <link rel="stylesheet" href="./src/index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   </head>
-  <body class="bg-dark text-slate-200">
-    <div id="custom-cursor"></div>
+  <body>
+    
+    <!-- Progress Bar -->
     <div id="progress-bar"></div>
 
-    <div class="glow-bg">
-      <div class="glow-circle w-[500px] h-[500px] bg-primary/20 -top-20 -left-20"></div>
-      <div class="glow-circle w-[400px] h-[400px] bg-secondary/10 bottom-20 right-20"></div>
-    </div>
+    <!-- Background Glows -->
+    <div class="glow-bg glow-top-right"></div>
+    <div class="glow-bg glow-bottom-left"></div>
 
     <!-- Navbar -->
-    <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-6 px-6 md:px-12">
-      <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <a href="#" class="text-2xl font-display font-bold tracking-tighter">
-          SOLOMON<span class="text-primary">.</span>
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-40 py-6 transition-all">
+      <div class="container flex justify-between items-center">
+        <a href="#" class="font-bold text-xl mono" style="color: var(--text-primary); font-size: 1.25rem; text-decoration: none;">
+          SYA<span class="text-blue-500">.</span>
         </a>
-        
-        <div class="hidden md:flex items-center gap-8">
-          <a href="#about" class="text-sm font-medium hover:text-primary transition-colors">About</a>
-          <a href="#experience" class="text-sm font-medium hover:text-primary transition-colors">Experience</a>
-          <a href="#projects" class="text-sm font-medium hover:text-primary transition-colors">Projects</a>
-          <a href="#contact" class="text-sm font-medium hover:text-primary transition-colors">Contact</a>
-          <button id="dark-mode-toggle" class="p-2 glass-card hover:bg-white/10 transition-all">🌙</button>
+        <div class="hidden md:flex items-center gap-8 mono" style="font-size: 0.65rem;">
+          <a href="#about" class="hover:text-blue-400 transition-all" style="text-decoration: none; color: var(--text-secondary);">About</a>
+          <a href="#education" class="hover:text-blue-400 transition-all" style="text-decoration: none; color: var(--text-secondary);">Education</a>
+          <a href="#experience" class="hover:text-blue-400 transition-all" style="text-decoration: none; color: var(--text-secondary);">Experience</a>
+          <a href="#projects" class="hover:text-blue-400 transition-all" style="text-decoration: none; color: var(--text-secondary);">Projects</a>
+          <a href="#books" class="hover:text-blue-400 transition-all" style="text-decoration: none; color: var(--text-secondary);">Books</a>
+          <a href="#contact" class="hover:text-blue-400 transition-all" style="text-decoration: none; color: var(--text-secondary);">Contact</a>
         </div>
-
-        <button id="menu-toggle" class="md:hidden p-2 glass-card">
-          <i data-lucide="menu" id="menu-icon"></i>
-          <i data-lucide="x" id="close-icon" class="hidden"></i>
-        </button>
       </div>
     </nav>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="fixed inset-0 z-40 bg-dark/95 backdrop-blur-xl hidden md:hidden flex flex-col items-center justify-center gap-8">
-      <a href="#about" class="text-3xl font-display font-bold hover:text-primary transition-colors">About</a>
-      <a href="#experience" class="text-3xl font-display font-bold hover:text-primary transition-colors">Experience</a>
-      <a href="#projects" class="text-3xl font-display font-bold hover:text-primary transition-colors">Projects</a>
-      <a href="#contact" class="text-3xl font-display font-bold hover:text-primary transition-colors">Contact</a>
-    </div>
-
     <main>
-      <!-- Hero Section -->
-      <section id="hero" class="min-h-screen flex items-center justify-center pt-20 px-6">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+      <!-- HERO SECTION -->
+      <section class="min-h-screen flex items-center pt-20 relative overflow-hidden">
+        <div class="container grid md:grid-cols-2 gap-12 items-center relative z-10">
           <div class="reveal">
-            <div class="inline-block px-4 py-2 glass-card text-primary text-xs font-bold tracking-widest uppercase mb-6">
-              Available for Collaboration
-            </div>
-            <h1 class="text-6xl md:text-8xl font-bold tracking-tighter leading-none mb-8">
-              Solomon Yaw <span class="text-gradient">Adeklo</span>
+            <p class="mono mb-6 text-accent-gradient">Software Developer | AI Enthusiast | Prompt Engineering Expert</p>
+            <h1 class="text-6xl md:text-8xl font-bold leading-tight mb-8 text-gradient">
+              Solomon Yaw <br />
+              Adeklo
             </h1>
-            <p class="text-xl md:text-2xl text-slate-400 font-medium mb-8 max-w-xl leading-relaxed">
-              Software Developer | AI Enthusiast | Prompt Engineering Expert | Systems Theorist | Data Analyst
+            <p class="text-lg text-white/60 mb-10 leading-relaxed" style="max-width: 36rem;">
+              "I am a multidisciplinary technology professional driven by a deep passion for solving real-world problems through software, systems thinking, and artificial intelligence. My journey spans from grassroots practical work to advanced digital innovation, shaping a unique perspective on technology and society."
             </p>
-            <div class="flex flex-wrap gap-4">
-              <a href="#contact" class="px-8 py-4 bg-primary text-white font-bold rounded-full hover:bg-primary/80 transition-all shadow-lg shadow-primary/20">
-                Let's Talk
+            
+            <div class="flex flex-wrap items-center gap-6">
+              <a href="#contact" class="btn-primary">
+                Get in Touch <i data-lucide="arrow-right" class="w-4 h-4"></i>
               </a>
-              <a href="#projects" class="px-8 py-4 glass-card font-bold rounded-full hover:bg-white/10 transition-all">
-                View Work
-              </a>
+              <div class="flex items-center gap-4">
+                <a href="https://web.facebook.com/solomon.yaw" target="_blank" class="p-3 border border-white/10 rounded-full hover:border-blue-500 transition-all" style="color: var(--text-secondary); display: flex;">
+                  <i data-lucide="facebook" class="w-5 h-5"></i>
+                </a>
+                <a href="https://www.instagram.com/solomonyaw.ghandi/" target="_blank" class="p-3 border border-white/10 rounded-full hover:border-blue-500 transition-all" style="color: var(--text-secondary); display: flex;">
+                  <i data-lucide="instagram" class="w-5 h-5"></i>
+                </a>
+                <a href="https://github.com/solomonyaw" target="_blank" class="p-3 border border-white/10 rounded-full hover:border-blue-500 transition-all" style="color: var(--text-secondary); display: flex;">
+                  <i data-lucide="github" class="w-5 h-5"></i>
+                </a>
+              </div>
             </div>
-            <div class="mt-12 flex gap-6">
-              <a href="https://web.facebook.com/solomon.yaw" target="_blank" class="text-slate-500 hover:text-primary transition-colors"><i data-lucide="facebook"></i></a>
-              <a href="https://www.instagram.com/solomonyaw.ghandi/" target="_blank" class="text-slate-500 hover:text-accent transition-colors"><i data-lucide="instagram"></i></a>
-              <a href="https://github.com/solomonyaw" target="_blank" class="text-slate-500 hover:text-white transition-colors"><i data-lucide="github"></i></a>
+          </div>
+
+          <div class="relative reveal" style="transition-delay: 200ms;">
+            <div class="absolute inset-0 bg-blue-500/10 blur-[120px] rounded-full"></div>
+            <div class="card" style="padding: 0; border-radius: 24px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
+              <img 
+                src="https://picsum.photos/seed/solomon-hero/800/1000" 
+                alt="Solomon Yaw Adeklo" 
+                class="w-full grayscale hover:grayscale-0 transition-all duration-700"
+                style="display: block; object-fit: cover; aspect-ratio: 4/5;"
+                referrerPolicy="no-referrer"
+              />
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT ME -->
+      <section id="about" class="py-32 relative">
+        <div class="container">
+          <div class="reveal mb-16">
+            <p class="mono mb-4">01. Introduction</p>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">About Me</h2>
+            <div class="h-1 w-20 bg-blue-500"></div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-12">
+            <div class="reveal">
+              <p class="text-xl text-white mb-8 leading-relaxed">
+                Solomon Yaw Adeklo is a software developer, AI enthusiast, prompt engineering expert, systems theorist, and data analyst with a strong interdisciplinary foundation.
+              </p>
+              <p class="text-white/60 mb-8 leading-relaxed">
+                His intellectual curiosity spans across multiple domains including Economics, Geography, African History, Political Science, Sociology, Philosophy, and Psychology. This broad knowledge base allows him to approach problems holistically, combining analytical reasoning with creative and systems-level thinking.
+              </p>
+              <p class="text-white/60 mb-8 leading-relaxed">
+                He is deeply passionate about using technology not just as a tool, but as a transformative force capable of solving complex societal challenges.
+              </p>
+            </div>
+            <div class="flex flex-col gap-6 reveal" style="transition-delay: 200ms;">
+              <div class="card">
+                <p class="text-2xl font-medium italic text-white/90 mb-6 leading-snug">
+                  "Technology is a transformative force capable of solving complex societal challenges."
+                </p>
+                <div class="flex flex-wrap gap-3">
+                  <span class="tag">Systems Thinking</span>
+                  <span class="tag">AI Strategy</span>
+                  <span class="tag">Data Analysis</span>
+                  <span class="tag">Software Dev</span>
+                </div>
+              </div>
+              <div class="card" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, transparent 100%);">
+                <h4 class="text-lg font-bold mb-4 text-white">Core Philosophy</h4>
+                <p class="text-sm text-white/60">Approaching problems holistically by combining analytical reasoning with creative and systems-level thinking.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section id="education" class="py-32 bg-white/2 relative">
+        <div class="container">
+          <div class="reveal mb-16">
+            <p class="mono mb-4">02. Academic Journey</p>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gradient">Education</h2>
+            <div class="h-1 w-20 bg-blue-500"></div>
           </div>
           
-          <div class="relative reveal">
-            <div class="aspect-square rounded-3xl overflow-hidden glass-card p-2">
-              <img src="https://picsum.photos/seed/solomon/800/800" alt="Solomon Yaw Adeklo" class="w-full h-full object-cover rounded-2xl grayscale hover:grayscale-0 transition-all duration-700" referrerPolicy="no-referrer" />
-            </div>
-            <div class="absolute -bottom-6 -left-6 glass-card p-6 reveal">
-              <div class="text-4xl font-bold text-primary">5+</div>
-              <div class="text-xs font-bold text-slate-500 uppercase tracking-widest">Years Experience</div>
-            </div>
-            <div class="absolute -top-6 -right-6 glass-card p-6 reveal">
-              <div class="text-4xl font-bold text-secondary">50+</div>
-              <div class="text-xs font-bold text-slate-500 uppercase tracking-widest">Projects Completed</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- About Section -->
-      <section id="about" class="section-padding bg-darker">
-        <div class="max-w-7xl mx-auto">
-          <div class="grid lg:grid-cols-2 gap-20 items-center">
-            <div class="reveal">
-              <h2 class="text-5xl font-bold mb-8">Driven by <span class="text-primary">Purpose</span></h2>
-              <p class="text-lg text-slate-400 leading-relaxed mb-6">
-                I am a multidisciplinary technology professional driven by a deep passion for solving real-world problems through software, systems thinking, and artificial intelligence. My journey spans from grassroots practical work to advanced digital innovation, shaping a unique perspective on technology and society.
-              </p>
-              <p class="text-lg text-slate-400 leading-relaxed mb-8">
-                With a background that blends technical expertise with entrepreneurial spirit, I approach every project as a system to be optimized and a story to be told.
-              </p>
-              <div class="grid grid-cols-2 gap-8">
-                <div>
-                  <h4 class="text-white font-bold mb-2">Systems Thinking</h4>
-                  <p class="text-sm text-slate-500">Holistic approach to problem solving and architecture.</p>
-                </div>
-                <div>
-                  <h4 class="text-white font-bold mb-2">AI Innovation</h4>
-                  <p class="text-sm text-slate-500">Leveraging LLMs and prompt engineering for efficiency.</p>
-                </div>
-              </div>
-            </div>
-            <div class="glass-card p-12 relative reveal">
-              <div class="glow-circle w-[200px] h-[200px] bg-accent/20 -bottom-10 -left-10"></div>
-              <blockquote class="text-2xl font-display italic text-white leading-relaxed relative z-10">
-                "Technology is not just a tool, but a medium through which we can reshape our reality and solve the most complex challenges of our time."
-              </blockquote>
-              <div class="mt-8 flex items-center gap-4">
-                <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                  <i data-lucide="quote" class="text-primary"></i>
-                </div>
-                <div>
-                  <p class="text-white font-bold">Solomon Yaw Adeklo</p>
-                  <p class="text-xs text-slate-500 uppercase tracking-widest">Visionary Developer</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Education Section -->
-      <section id="education" class="section-padding bg-dark">
-        <div class="max-w-7xl mx-auto">
-          <div class="text-center mb-20 reveal">
-            <h2 class="text-5xl font-bold mb-6">Academic <span class="text-primary">Background</span></h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Foundations of my technical knowledge and academic excellence.</p>
-          </div>
-
-          <div class="grid md:grid-cols-2 gap-8">
-            <div class="glass-card p-10 hover:border-primary/50 transition-all reveal">
-              <div class="flex items-center gap-4 mb-6">
-                <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <i data-lucide="graduation-cap" class="text-primary"></i>
-                </div>
-                <div>
-                  <h3 class="text-xl font-bold text-white">BSc. Information Technology</h3>
-                  <p class="text-primary text-sm">University of Cape Coast</p>
-                </div>
-              </div>
-              <p class="text-slate-400 mb-6">Focused on software engineering, database management, and systems analysis. Graduated with honors.</p>
-              <span class="px-4 py-2 rounded-full bg-white/5 text-xs font-bold text-slate-500 uppercase tracking-widest">2018 - 2022</span>
-            </div>
-
-            <div class="glass-card p-10 hover:border-secondary/50 transition-all reveal">
-              <div class="flex items-center gap-4 mb-6">
-                <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center">
-                  <i data-lucide="school" class="text-secondary"></i>
-                </div>
-                <div>
-                  <h3 class="text-xl font-bold text-white">WASSCE</h3>
-                  <p class="text-secondary text-sm">Adisadel College</p>
-                </div>
-              </div>
-              <p class="text-slate-400 mb-6">General Science background with a strong focus on mathematics and physics.</p>
-              <span class="px-4 py-2 rounded-full bg-white/5 text-xs font-bold text-slate-500 uppercase tracking-widest">2014 - 2017</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Experience Section -->
-      <section id="experience" class="section-padding">
-        <div class="max-w-7xl mx-auto">
-          <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-            <div class="reveal">
-              <h2 class="text-5xl font-bold mb-4">Professional <span class="text-secondary">Journey</span></h2>
-              <p class="text-slate-400 max-w-xl">A timeline of my growth, from foundational roles to leadership in technology and innovation.</p>
-            </div>
-          </div>
-
-          <div class="space-y-12">
-            <!-- Experience Item 1 -->
-            <div class="glass-card p-8 md:p-12 hover:border-secondary/50 transition-all group reveal">
-              <div class="flex flex-col md:flex-row justify-between gap-6">
-                <div class="flex gap-6">
-                  <div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center shrink-0 group-hover:bg-secondary/20 transition-all">
-                    <i data-lucide="briefcase" class="text-secondary"></i>
-                  </div>
+          <div class="flex flex-col gap-12">
+            <!-- Tema Secondary -->
+            <div class="grid md:grid-cols-[1fr_3fr] gap-8 reveal">
+              <div class="mono text-lg text-white/30 pt-2">2004 — 2007</div>
+              <div class="card">
+                <div class="flex justify-between items-start mb-6">
                   <div>
-                    <h3 class="text-2xl font-bold text-white mb-2">Software Developer</h3>
-                    <p class="text-secondary font-medium mb-4">Adeklo Systems</p>
-                    <ul class="space-y-3 text-slate-400">
-                      <li class="flex gap-3"><span class="text-secondary">•</span> Designing and implementing scalable software solutions.</li>
-                      <li class="flex gap-3"><span class="text-secondary">•</span> Leading full-stack development projects with a focus on performance.</li>
-                    </ul>
+                    <h3 class="text-2xl font-bold mb-1">Tema Secondary School</h3>
+                    <p class="text-blue-400">General Arts</p>
                   </div>
+                  <span class="tag">Foundation</span>
                 </div>
-                <div class="text-right">
-                  <span class="px-4 py-2 rounded-full bg-white/5 text-xs font-bold text-slate-400 uppercase tracking-widest">2021 - Present</span>
-                </div>
+                <p class="text-white/60 mb-4">Developed a strong academic foundation through electives in Economics, Geography, and Elective Mathematics.</p>
+                <p class="text-sm text-white/40 italic">This early exposure shaped his analytical thinking and understanding of socio-economic systems.</p>
               </div>
             </div>
 
-            <!-- Experience Item 2 -->
-            <div class="glass-card p-8 md:p-12 hover:border-primary/50 transition-all group reveal">
-              <div class="flex flex-col md:flex-row justify-between gap-6">
-                <div class="flex gap-6">
-                  <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-all">
-                    <i data-lucide="terminal" class="text-primary"></i>
-                  </div>
+            <!-- UDS -->
+            <div class="grid md:grid-cols-[1fr_3fr] gap-8 reveal">
+              <div class="mono text-lg text-white/30 pt-2">UDS</div>
+              <div class="card">
+                <div class="flex justify-between items-start mb-6">
                   <div>
-                    <h3 class="text-2xl font-bold text-white mb-2">IT Support & Systems Admin</h3>
-                    <p class="text-primary font-medium mb-4">Freelance / Contract</p>
-                    <ul class="space-y-3 text-slate-400">
-                      <li class="flex gap-3"><span class="text-primary">•</span> Managed network infrastructure and provided technical support.</li>
-                      <li class="flex gap-3"><span class="text-primary">•</span> Optimized system workflows for various small businesses.</li>
-                    </ul>
+                    <h3 class="text-2xl font-bold mb-1">University for Development Studies</h3>
+                    <p class="text-blue-400">BA Integrated Development Studies</p>
+                  </div>
+                  <div class="logo-container">
+                    <img src="https://picsum.photos/seed/uds-logo/100/100" alt="UDS Logo" referrerPolicy="no-referrer" />
                   </div>
                 </div>
-                <div class="text-right">
-                  <span class="px-4 py-2 rounded-full bg-white/5 text-xs font-bold text-slate-400 uppercase tracking-widest">2018 - 2021</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Projects Section -->
-      <section id="projects" class="section-padding bg-darker">
-        <div class="max-w-7xl mx-auto">
-          <div class="text-center mb-20 reveal">
-            <h2 class="text-5xl font-bold mb-6">Featured <span class="text-accent">Projects</span></h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">A collection of work that demonstrates my technical skills and problem-solving approach.</p>
-          </div>
-
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Project 1 -->
-            <div class="glass-card overflow-hidden group reveal">
-              <div class="h-64 overflow-hidden">
-                <img src="https://picsum.photos/seed/project1/800/600" alt="AI Dashboard" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer" />
-              </div>
-              <div class="p-8">
-                <div class="flex gap-2 mb-4">
-                  <span class="text-[10px] font-bold px-2 py-1 bg-primary/20 text-primary rounded uppercase tracking-widest">React</span>
-                  <span class="text-[10px] font-bold px-2 py-1 bg-secondary/20 text-secondary rounded uppercase tracking-widest">AI</span>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-3">AI-Powered Analytics Dashboard</h3>
-                <p class="text-slate-400 text-sm mb-6">A sophisticated dashboard leveraging LLMs to provide real-time data insights and predictive analytics.</p>
-                <a href="#" class="inline-flex items-center gap-2 text-primary font-bold text-sm hover:gap-4 transition-all">
-                  View Project <i data-lucide="arrow-right" size="16"></i>
-                </a>
-              </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="glass-card overflow-hidden group reveal">
-              <div class="h-64 overflow-hidden">
-                <img src="https://picsum.photos/seed/project2/800/600" alt="Systems Arch" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer" />
-              </div>
-              <div class="p-8">
-                <div class="flex gap-2 mb-4">
-                  <span class="text-[10px] font-bold px-2 py-1 bg-accent/20 text-accent rounded uppercase tracking-widest">Node.js</span>
-                  <span class="text-[10px] font-bold px-2 py-1 bg-primary/20 text-primary rounded uppercase tracking-widest">Systems</span>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-3">Enterprise Resource Planner</h3>
-                <p class="text-slate-400 text-sm mb-6">A custom ERP system designed for small to medium enterprises to streamline operations and inventory.</p>
-                <a href="#" class="inline-flex items-center gap-2 text-primary font-bold text-sm hover:gap-4 transition-all">
-                  View Project <i data-lucide="arrow-right" size="16"></i>
-                </a>
-              </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="glass-card overflow-hidden group reveal">
-              <div class="h-64 overflow-hidden">
-                <img src="https://picsum.photos/seed/project3/800/600" alt="Data Viz" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer" />
-              </div>
-              <div class="p-8">
-                <div class="flex gap-2 mb-4">
-                  <span class="text-[10px] font-bold px-2 py-1 bg-secondary/20 text-secondary rounded uppercase tracking-widest">Python</span>
-                  <span class="text-[10px] font-bold px-2 py-1 bg-accent/20 text-accent rounded uppercase tracking-widest">Data</span>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-3">Predictive Market Modeler</h3>
-                <p class="text-slate-400 text-sm mb-6">A data analysis tool that uses historical market data to predict future trends with high accuracy.</p>
-                <a href="#" class="inline-flex items-center gap-2 text-primary font-bold text-sm hover:gap-4 transition-all">
-                  View Project <i data-lucide="arrow-right" size="16"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Entrepreneurship Section -->
-      <section id="entrepreneurship" class="section-padding">
-        <div class="max-w-7xl mx-auto">
-          <div class="grid lg:grid-cols-2 gap-16 items-center">
-            <div class="reveal">
-              <h2 class="text-5xl font-bold mb-8">Entrepreneurial <span class="text-primary">Spirit</span></h2>
-              <p class="text-lg text-slate-400 leading-relaxed mb-6">
-                Beyond code, I am an entrepreneur at heart. I've founded and led ventures that bridge the gap between technology and practical utility.
-              </p>
-              <div class="space-y-6">
-                <div class="flex gap-4">
-                  <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                    <i data-lucide="rocket" class="text-primary"></i>
-                  </div>
-                  <div>
-                    <h4 class="text-white font-bold mb-1">Adeklo Systems</h4>
-                    <p class="text-sm text-slate-500">Providing custom software and IT infrastructure solutions.</p>
-                  </div>
-                </div>
-                <div class="flex gap-4">
-                  <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center shrink-0">
-                    <i data-lucide="users" class="text-secondary"></i>
-                  </div>
-                  <div>
-                    <h4 class="text-white font-bold mb-1">Community Tech Lead</h4>
-                    <p class="text-sm text-slate-500">Mentoring young developers and fostering local innovation.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="reveal">
-              <div class="rounded-3xl overflow-hidden glass-card p-4">
-                <img src="https://picsum.photos/seed/startup/800/600" alt="Entrepreneurship" class="w-full h-full object-cover rounded-2xl opacity-80" referrerPolicy="no-referrer" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Books Section -->
-      <section id="books" class="section-padding bg-darker">
-        <div class="max-w-7xl mx-auto">
-          <div class="text-center mb-20 reveal">
-            <h2 class="text-5xl font-bold mb-6">Literary <span class="text-secondary">Works</span></h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Sharing knowledge through writing. Books authored by Solomon Yaw Adeklo.</p>
-          </div>
-
-          <div class="grid md:grid-cols-3 gap-12">
-            <!-- Book 1 -->
-            <div class="text-center reveal">
-              <div class="aspect-[3/4] glass-card p-4 mb-6 group cursor-pointer">
-                <div class="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 rounded-xl flex flex-col items-center justify-center p-8 text-center group-hover:scale-105 transition-transform">
-                  <i data-lucide="book-open" class="text-primary mb-4" size="48"></i>
-                  <h3 class="text-xl font-bold text-white">The Systems Mindset</h3>
-                </div>
-              </div>
-              <h4 class="font-bold text-white mb-2">The Systems Mindset</h4>
-              <p class="text-xs text-slate-500 uppercase font-bold tracking-widest">By Solomon Yaw Adeklo</p>
-            </div>
-
-            <!-- Book 2 -->
-            <div class="text-center reveal">
-              <div class="aspect-[3/4] glass-card p-4 mb-6 group cursor-pointer">
-                <div class="w-full h-full bg-gradient-to-br from-secondary/20 to-accent/20 rounded-xl flex flex-col items-center justify-center p-8 text-center group-hover:scale-105 transition-transform">
-                  <i data-lucide="cpu" class="text-secondary mb-4" size="48"></i>
-                  <h3 class="text-xl font-bold text-white">AI & The Future of Work</h3>
-                </div>
-              </div>
-              <h4 class="font-bold text-white mb-2">AI & The Future of Work</h4>
-              <p class="text-xs text-slate-500 uppercase font-bold tracking-widest">By Solomon Yaw Adeklo</p>
-            </div>
-
-            <!-- Book 3 -->
-            <div class="text-center reveal">
-              <div class="aspect-[3/4] glass-card p-4 mb-6 group cursor-pointer">
-                <div class="w-full h-full bg-gradient-to-br from-accent/20 to-primary/20 rounded-xl flex flex-col items-center justify-center p-8 text-center group-hover:scale-105 transition-transform">
-                  <i data-lucide="code" class="text-accent mb-4" size="48"></i>
-                  <h3 class="text-xl font-bold text-white">Modern Dev Workflows</h3>
-                </div>
-              </div>
-              <h4 class="font-bold text-white mb-2">Modern Dev Workflows</h4>
-              <p class="text-xs text-slate-500 uppercase font-bold tracking-widest">By Solomon Yaw Adeklo</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Inspiration Section -->
-      <section id="inspiration" class="section-padding bg-dark">
-        <div class="max-w-7xl mx-auto">
-          <div class="text-center mb-20 reveal">
-            <h2 class="text-5xl font-bold mb-6">Daily <span class="text-accent">Inspiration</span></h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Quotes and philosophies that drive my work and life.</p>
-          </div>
-
-          <div class="grid md:grid-cols-2 gap-12">
-            <div class="glass-card p-12 relative reveal">
-              <i data-lucide="quote" class="absolute top-8 right-8 text-white/5" size="80"></i>
-              <p class="text-2xl font-display italic text-white leading-relaxed mb-8">
-                "The only way to do great work is to love what you do."
-              </p>
-              <div class="flex items-center gap-4">
-                <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                  <i data-lucide="user" class="text-primary" size="16"></i>
-                </div>
-                <div>
-                  <p class="text-white font-bold">Steve Jobs</p>
-                  <p class="text-xs text-slate-500 uppercase tracking-widest">Co-founder, Apple Inc.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="glass-card p-12 relative reveal">
-              <i data-lucide="quote" class="absolute top-8 right-8 text-white/5" size="80"></i>
-              <p class="text-2xl font-display italic text-white leading-relaxed mb-8">
-                "Innovation distinguishes between a leader and a follower."
-              </p>
-              <div class="flex items-center gap-4">
-                <div class="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center">
-                  <i data-lucide="user" class="text-secondary" size="16"></i>
-                </div>
-                <div>
-                  <p class="text-white font-bold">Steve Jobs</p>
-                  <p class="text-xs text-slate-500 uppercase tracking-widest">Co-founder, Apple Inc.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Skills Section -->
-      <section id="skills" class="section-padding">
-        <div class="max-w-7xl mx-auto">
-          <div class="grid lg:grid-cols-2 gap-16 items-center">
-            <div class="order-2 lg:order-1 reveal">
-              <div class="space-y-8">
-                <div>
-                  <h3 class="text-xs font-bold text-primary uppercase tracking-widest mb-4">PROGRAMMING</h3>
-                  <div class="flex flex-wrap gap-3">
-                    <span class="px-4 py-2 glass-card text-sm font-medium hover:border-primary/50 transition-colors">HTML</span>
-                    <span class="px-4 py-2 glass-card text-sm font-medium hover:border-primary/50 transition-colors">CSS</span>
-                    <span class="px-4 py-2 glass-card text-sm font-medium hover:border-primary/50 transition-colors">SCSS</span>
-                    <span class="px-4 py-2 glass-card text-sm font-medium hover:border-primary/50 transition-colors">JavaScript</span>
-                    <span class="px-4 py-2 glass-card text-sm font-medium hover:border-primary/50 transition-colors">C++</span>
-                    <span class="px-4 py-2 glass-card text-sm font-medium hover:border-primary/50 transition-colors">C#</span>
-                    <span class="px-4 py-2 glass-card text-sm font-medium hover:border-primary/50 transition-colors">PHP</span>
-                    <span class="px-4 py-2 glass-card text-sm font-medium hover:border-primary/50 transition-colors">Python</span>
-                    <span class="px-4 py-2 glass-card text-sm font-medium hover:border-primary/50 transition-colors">Java</span>
-                  </div>
-                </div>
-                <div>
-                  <h3 class="text-xs font-bold text-secondary uppercase tracking-widest mb-4">DATA & ANALYTICS</h3>
-                  <div class="flex flex-wrap gap-3">
-                    <span class="px-4 py-2 glass-card text-sm font-medium hover:border-secondary/50 transition-colors">MySQL</span>
-                    <span class="px-4 py-2 glass-card text-sm font-medium hover:border-secondary/50 transition-colors">Pandas</span>
-                    <span class="px-4 py-2 glass-card text-sm font-medium hover:border-secondary/50 transition-colors">Seaborn</span>
-                  </div>
-                </div>
-                <div>
-                  <h3 class="text-xs font-bold text-accent uppercase tracking-widest mb-4">OTHER EXPERTISE</h3>
-                  <div class="flex flex-wrap gap-3">
-                    <span class="px-4 py-2 glass-card text-sm font-medium hover:border-accent/50 transition-colors">System Analysis</span>
-                    <span class="px-4 py-2 glass-card text-sm font-medium hover:border-accent/50 transition-colors">Multimedia Design</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="order-1 lg:order-2 reveal">
-              <div class="glass-card p-10 border-primary/20 relative overflow-hidden">
-                <div class="absolute top-0 right-0 p-4 opacity-10">
-                  <i data-lucide="cpu" size="120"></i>
-                </div>
-                <h2 class="text-4xl font-bold mb-6">Prompt <span class="text-primary">Engineering</span></h2>
-                <p class="text-slate-300 mb-8 leading-relaxed">
-                  Solomon is currently focused on prompt engineering as a core skill. He believes the world is entering the Fourth Industrial Revolution where AI transforms how applications are built.
-                </p>
-                <div class="space-y-4">
-                  <div class="flex items-center gap-3 text-slate-400">
-                    <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                    Advanced and structured prompts
-                  </div>
-                  <div class="flex items-center gap-3 text-slate-400">
-                    <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                    Sophisticated vocabulary
-                  </div>
-                  <div class="flex items-center gap-3 text-slate-400">
-                    <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                    AI-assisted workflows
-                  </div>
-                  <div class="flex items-center gap-3 text-slate-400">
-                    <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                    Faster development & Scalable innovation
-                  </div>
-                </div>
-                <div class="mt-10 rounded-2xl overflow-hidden h-48">
-                  <img src="https://picsum.photos/seed/ai-future/800/400" alt="AI Future" class="w-full h-full object-cover opacity-50 grayscale hover:grayscale-0 transition-all duration-700" referrerPolicy="no-referrer" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Contact Section -->
-      <section id="contact" class="section-padding bg-darker">
-        <div class="max-w-7xl mx-auto">
-          <div class="glass-card p-12 md:p-20 relative overflow-hidden reveal">
-            <div class="glow-circle w-[300px] h-[300px] bg-primary/10 -top-20 -right-20"></div>
-            
-            <div class="grid lg:grid-cols-2 gap-16 relative z-10">
-              <div>
-                <h2 class="text-5xl font-bold mb-6">Let's <span class="text-primary">Connect</span></h2>
-                <p class="text-slate-400 text-lg mb-12">
-                  Interested in collaboration or have a complex problem to solve? Reach out through any of the platforms below.
-                </p>
+                <p class="text-white/60 mb-6">Interdisciplinary program across Economics, Environmental Studies, Social/Political Studies, Planning, and Communication.</p>
                 
-                <div class="space-y-6">
-                  <a href="https://web.facebook.com/solomon.yaw" target="_blank" class="flex items-center gap-4 group">
-                    <div class="p-4 bg-white/5 rounded-2xl group-hover:bg-primary/20 transition-all">
-                      <i data-lucide="facebook" class="text-slate-400 group-hover:text-primary"></i>
-                    </div>
-                    <div>
-                      <p class="text-xs font-bold text-slate-500 uppercase">Facebook</p>
-                      <p class="text-white font-medium">solomon.yaw</p>
-                    </div>
-                  </a>
-                  <a href="https://www.instagram.com/solomonyaw.ghandi/" target="_blank" class="flex items-center gap-4 group">
-                    <div class="p-4 bg-white/5 rounded-2xl group-hover:bg-accent/20 transition-all">
-                      <i data-lucide="instagram" class="text-slate-400 group-hover:text-accent"></i>
-                    </div>
-                    <div>
-                      <p class="text-xs font-bold text-slate-500 uppercase">Instagram</p>
-                      <p class="text-white font-medium">@solomonyaw.ghandi</p>
-                    </div>
-                  </a>
-                  <a href="https://github.com/solomonyaw" target="_blank" class="flex items-center gap-4 group">
-                    <div class="p-4 bg-white/5 rounded-2xl group-hover:bg-white/20 transition-all">
-                      <i data-lucide="github" class="text-slate-400 group-hover:text-white"></i>
-                    </div>
-                    <div>
-                      <p class="text-xs font-bold text-slate-500 uppercase">GitHub</p>
-                      <p class="text-white font-medium">solomonyaw</p>
-                    </div>
-                  </a>
+                <div class="mb-8">
+                  <h4 class="text-lg font-bold mb-4 text-white">The Third Trimester Field Practical Programme (TTFPP)</h4>
+                  <p class="text-white/60 mb-4">A community-based experiential learning program at Old Buipe, Northern Region of Ghana.</p>
+                  <ul class="flex flex-col gap-2 text-sm text-white/50" style="list-style: none;">
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-500"></i> Applied Geography knowledge in a practical setting</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-500"></i> Designed a village map without surveying equipment</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-500"></i> Documented natural resources within the community</li>
+                  </ul>
                 </div>
               </div>
+            </div>
 
-              <form class="space-y-6" onsubmit="event.preventDefault()">
-                <div class="grid sm:grid-cols-2 gap-6">
-                  <div class="space-y-2">
-                    <label class="text-xs font-bold text-slate-500 uppercase">Full Name</label>
-                    <input type="text" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-primary outline-none transition-all" placeholder="John Doe" />
+            <!-- Valley View -->
+            <div class="grid md:grid-cols-[1fr_3fr] gap-8 reveal">
+              <div class="mono text-lg text-white/30 pt-2">VVU</div>
+              <div class="card">
+                <div class="flex justify-between items-start mb-6">
+                  <div>
+                    <h3 class="text-2xl font-bold mb-1">Valley View University</h3>
+                    <p class="text-blue-400">BSc Information Technology</p>
                   </div>
-                  <div class="space-y-2">
-                    <label class="text-xs font-bold text-slate-500 uppercase">Email Address</label>
-                    <input type="email" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-primary outline-none transition-all" placeholder="john@example.com" />
+                  <div class="logo-container">
+                    <img src="https://picsum.photos/seed/vvu-logo/100/100" alt="VVU Logo" referrerPolicy="no-referrer" />
                   </div>
                 </div>
-                <div class="space-y-2">
-                  <label class="text-xs font-bold text-slate-500 uppercase">Subject</label>
-                  <input type="text" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-primary outline-none transition-all" placeholder="Project Inquiry" />
+                <p class="text-white/60 mb-6">Introduced to GitHub in 2006 by Abandor Sam, hosting all semester projects on the platform.</p>
+                <div class="p-4 bg-blue-500/5 border-l-2 border-blue-500 rounded-r-lg">
+                  <p class="text-sm text-white/50 italic">"This exposure significantly influenced his development workflow, version control practices, and commitment to open-source learning."</p>
                 </div>
-                <div class="space-y-2">
-                  <label class="text-xs font-bold text-slate-500 uppercase">Message</label>
-                  <textarea rows="5" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-primary outline-none transition-all resize-none" placeholder="Tell me about your project..."></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience" class="py-32 relative">
+        <div class="container">
+          <div class="reveal mb-16">
+            <p class="mono mb-4">03. Professional Path</p>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Experience</h2>
+            <div class="h-1 w-20 bg-blue-500"></div>
+          </div>
+          
+          <div class="flex flex-col gap-12">
+            <!-- Amalitech -->
+            <div class="card reveal">
+              <div class="flex flex-col md:flex-row justify-between gap-8">
+                <div class="flex-1">
+                  <div class="flex items-center gap-4 mb-6">
+                    <div class="logo-container">
+                      <img src="https://picsum.photos/seed/amalitech/100/100" alt="Amalitech Logo" referrerPolicy="no-referrer" />
+                    </div>
+                    <div>
+                      <h3 class="text-2xl font-bold">Amalitech Training Academy</h3>
+                      <p class="text-blue-400">Software Development Apprenticeship</p>
+                    </div>
+                  </div>
+                  <p class="text-white/60 mb-6">Gained hands-on experience in modern software development practices and collaborative team environments.</p>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="tag">Modern Practices</span>
+                    <span class="tag">Team Collaboration</span>
+                    <span class="tag">Industry Standards</span>
+                  </div>
                 </div>
-                <button class="w-full py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary/80 transition-all shadow-lg shadow-primary/20">
-                  Send Message
-                </button>
-              </form>
+                <div class="md:w-1/3">
+                  <img src="https://picsum.photos/seed/cert/400/250" alt="Certificate" class="rounded-xl border border-white/10 grayscale hover:grayscale-0 transition-all" referrerPolicy="no-referrer" />
+                </div>
+              </div>
+            </div>
+
+            <!-- GTDC -->
+            <div class="card reveal">
+              <div class="flex justify-between items-start mb-8">
+                <div>
+                  <h3 class="text-2xl font-bold mb-1">Ghana Tourism Development Company</h3>
+                  <p class="text-blue-400">National Service Personnel | 2020 – 2021</p>
+                </div>
+                <span class="tag">Accra, Ghana</span>
+              </div>
+              <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                  <h4 class="text-lg font-bold mb-4 text-white">Responsibilities</h4>
+                  <ul class="flex flex-col gap-2 text-sm text-white/50" style="list-style: none;">
+                    <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-blue-500"></i> Website maintenance and updates</li>
+                    <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-blue-500"></i> Networking computers across offices</li>
+                    <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-blue-500"></i> Developed proposal for virtual tourism platform</li>
+                  </ul>
+                </div>
+                <div class="p-6 bg-white/5 rounded-xl border border-white/10">
+                  <h4 class="text-lg font-bold mb-2 text-white">Major Project</h4>
+                  <p class="text-sm text-white/60 mb-4">Developed a prototype tourism website using HTML5, SASS, and JavaScript.</p>
+                  <a href="http://solomonadeklo.me/seeghanatours/" target="_blank" class="text-blue-400 text-sm hover:underline">View Project <i data-lucide="external-link" class="w-3 h-3 inline"></i></a>
+                </div>
+              </div>
+              <div class="mt-8 pt-8 border-t border-white/10">
+                <p class="text-sm text-white/40 mb-4">Present during the launch of the Ghana Center of the World Golf Tournament in Tema.</p>
+                <img src="https://picsum.photos/seed/golf/800/200" alt="Golf Event" class="w-full h-32 object-cover rounded-xl grayscale hover:grayscale-0 transition-all" referrerPolicy="no-referrer" />
+              </div>
+            </div>
+
+            <!-- Gibson Construction -->
+            <div class="card reveal">
+              <div class="flex justify-between items-start mb-8">
+                <div>
+                  <h3 class="text-2xl font-bold mb-1">Gibson Construction Company Limited</h3>
+                  <p class="text-blue-400">Labourer & Front Desk Personnel | 2008 – 2012</p>
+                </div>
+                <span class="tag">Cantonments, Accra</span>
+              </div>
+              <div class="grid md:grid-cols-2 gap-12">
+                <div class="flex flex-col gap-6">
+                  <p class="text-white/60">Started as a labourer and front desk personnel after secondary school at his brother's company.</p>
+                  <div class="grid grid-cols-2 gap-4">
+                    <img src="https://picsum.photos/seed/labour/300/200" alt="Labourer Role" class="rounded-lg grayscale hover:grayscale-0 transition-all" referrerPolicy="no-referrer" />
+                    <img src="https://picsum.photos/seed/frontdesk/300/200" alt="Front Desk Role" class="rounded-lg grayscale hover:grayscale-0 transition-all" referrerPolicy="no-referrer" />
+                  </div>
+                </div>
+                <div class="p-6 bg-blue-500/5 rounded-xl border border-blue-500/20">
+                  <h4 class="text-lg font-bold mb-4 text-white">The Tally Story (2008)</h4>
+                  <p class="text-sm text-white/60 mb-4">Downloaded and installed Tally accounting software via torrent for the company's accountant, creating regular backups.</p>
+                  <p class="text-sm italic text-white/40">"The accountant praised Solomon's technical abilities and recommended he pursue a career in IT even back in 2008."</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="py-32 bg-white/2 relative overflow-hidden">
+        <div class="glow-bg glow-center"></div>
+        <div class="container">
+          <div class="reveal mb-16">
+            <p class="mono mb-4">04. Selected Works</p>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gradient">Projects</h2>
+            <div class="h-1 w-20 bg-blue-500"></div>
+          </div>
+          <div class="card reveal" style="text-align: center; padding: 6rem 2rem;">
+            <i data-lucide="github" class="w-16 h-16 mx-auto mb-8 text-blue-500"></i>
+            <h3 class="text-3xl font-bold mb-6">Continuous Learning & Innovation</h3>
+            <p class="text-white/60 mb-12 leading-relaxed" style="max-width: 36rem; margin: 0 auto;">
+              My GitHub profile is a testament to my journey in software development, featuring projects that demonstrate experimentation and real-world application of skills.
+            </p>
+            <a href="https://github.com/solomonyaw" target="_blank" class="btn-primary">
+              Explore Repositories <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ENTREPRENEURSHIP -->
+      <section id="entrepreneurship" class="py-32 relative">
+        <div class="container">
+          <div class="reveal mb-16">
+            <p class="mono mb-4">05. Ventures</p>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Entrepreneurship</h2>
+            <div class="h-1 w-20 bg-blue-500"></div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="card reveal">
+              <div class="flex items-center gap-4 mb-8">
+                <div class="logo-container">
+                  <img src="https://picsum.photos/seed/handbill/100/100" alt="Handbill Logo" referrerPolicy="no-referrer" />
+                </div>
+                <h3 class="text-2xl font-bold">Handbill Incorporated</h3>
+              </div>
+              <p class="text-white/60 mb-8">Leading technology vision, product architecture, and digital innovation as Co-Founder.</p>
+              <a href="https://www.handbillapp.com" target="_blank" class="text-blue-400 hover:underline">Visit Website <i data-lucide="external-link" class="w-4 h-4 inline"></i></a>
+            </div>
+            <div class="card reveal" style="transition-delay: 100ms;">
+              <div class="flex items-center gap-4 mb-8">
+                <div class="logo-container">
+                  <img src="https://picsum.photos/seed/yahweh/100/100" alt="Yahweh Logo" referrerPolicy="no-referrer" />
+                </div>
+                <h3 class="text-2xl font-bold">Yahweh Music</h3>
+              </div>
+              <p class="text-white/60 mb-8">A gospel platform powered by AI, spreading the unadulterated Word of God through music.</p>
+              <a href="https://www.yahwehmusic.online" target="_blank" class="text-blue-400 hover:underline">Visit Website <i data-lucide="external-link" class="w-4 h-4 inline"></i></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BOOKS -->
+      <section id="books" class="py-32 bg-white/2 relative">
+        <div class="container">
+          <div class="reveal mb-16">
+            <p class="mono mb-4">06. Thought Leadership</p>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Publications</h2>
+            <div class="h-1 w-20 bg-blue-500"></div>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="card reveal flex flex-col">
+              <img src="https://picsum.photos/seed/book1/300/450" alt="Book Cover" class="w-full aspect-[2/3] object-cover rounded-lg mb-6 grayscale hover:grayscale-0 transition-all" referrerPolicy="no-referrer" />
+              <h4 class="text-lg font-bold mb-2">Modernizing the Football Industry</h4>
+              <p class="text-xs text-white/40 flex-grow">Using Buckminster Fuller’s ideas to innovate African sports.</p>
+            </div>
+            <div class="card reveal flex flex-col" style="transition-delay: 100ms;">
+              <img src="https://picsum.photos/seed/book2/300/450" alt="Book Cover" class="w-full aspect-[2/3] object-cover rounded-lg mb-6 grayscale hover:grayscale-0 transition-all" referrerPolicy="no-referrer" />
+              <h4 class="text-lg font-bold mb-2">The Wealth of Laodicea</h4>
+              <p class="text-xs text-white/40 flex-grow">Rich yet spiritually bankrupt — a deep exploration.</p>
+            </div>
+            <div class="card reveal flex flex-col" style="transition-delay: 200ms;">
+              <img src="https://picsum.photos/seed/book3/300/450" alt="Book Cover" class="w-full aspect-[2/3] object-cover rounded-lg mb-6 grayscale hover:grayscale-0 transition-all" referrerPolicy="no-referrer" />
+              <h4 class="text-lg font-bold mb-2">A Better Africa</h4>
+              <p class="text-xs text-white/40 flex-grow">Solving today's African problems with systems thinking.</p>
+            </div>
+            <div class="card reveal flex flex-col" style="transition-delay: 300ms;">
+              <img src="https://picsum.photos/seed/book4/300/450" alt="Book Cover" class="w-full aspect-[2/3] object-cover rounded-lg mb-6 grayscale hover:grayscale-0 transition-all" referrerPolicy="no-referrer" />
+              <h4 class="text-lg font-bold mb-2">Modernizing Ghana’s Film Industry</h4>
+              <p class="text-xs text-white/40 flex-grow">A scientific and technological blueprint for cinema.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INSPIRATION -->
+      <section id="inspiration" class="py-32 relative">
+        <div class="container">
+          <div class="reveal mb-16">
+            <p class="mono mb-4">07. Intellectual Roots</p>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Inspiration</h2>
+            <div class="h-1 w-20 bg-blue-500"></div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="reveal">
+              <h3 class="text-3xl font-bold mb-6">Buckminster Fuller</h3>
+              <p class="text-white/60 mb-8 leading-relaxed">
+                Deeply inspired by Fuller's work in systems design, sustainability, and innovation. Studying his comprehensive perspective has shaped my approach to technology.
+              </p>
+              <div class="flex flex-wrap gap-3">
+                <span class="tag">Synergetics</span>
+                <span class="tag">Operating Manual for Spaceship Earth</span>
+                <span class="tag">Grunch of Giants</span>
+                <span class="tag">Critical Path</span>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 reveal" style="transition-delay: 200ms;">
+              <img src="https://picsum.photos/seed/fuller1/300/400" alt="Fuller Book" class="rounded-xl grayscale hover:grayscale-0 transition-all" referrerPolicy="no-referrer" />
+              <img src="https://picsum.photos/seed/fuller2/300/400" alt="Fuller Book" class="rounded-xl grayscale hover:grayscale-0 transition-all" referrerPolicy="no-referrer" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="py-32 bg-white/2 relative">
+        <div class="container">
+          <div class="reveal mb-16">
+            <p class="mono mb-4">08. Expertise</p>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gradient">Skills</h2>
+            <div class="h-1 w-20 bg-blue-500"></div>
+          </div>
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="card reveal">
+              <h4 class="text-xl font-bold mb-6 flex items-center gap-2"><i data-lucide="code-2" class="text-blue-500"></i> Programming</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="tag">HTML</span> <span class="tag">CSS</span> <span class="tag">SCSS</span>
+                <span class="tag">JavaScript</span> <span class="tag">C++</span> <span class="tag">C#</span>
+                <span class="tag">PHP</span> <span class="tag">Python</span> <span class="tag">Java</span>
+              </div>
+            </div>
+            <div class="card reveal" style="transition-delay: 100ms;">
+              <h4 class="text-xl font-bold mb-6 flex items-center gap-2"><i data-lucide="bar-chart-3" class="text-blue-500"></i> Data & Analytics</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="tag">MySQL</span> <span class="tag">Pandas</span> <span class="tag">Seaborn</span>
+              </div>
+            </div>
+            <div class="card reveal" style="transition-delay: 200ms;">
+              <h4 class="text-xl font-bold mb-6 flex items-center gap-2"><i data-lucide="layers" class="text-blue-500"></i> Other</h4>
+              <div class="flex flex-wrap gap-2">
+                <span class="tag">System Analysis</span> <span class="tag">Multimedia Design</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROMPT ENGINEERING -->
+      <section id="prompt-engineering" class="py-32 relative overflow-hidden">
+        <div class="glow-bg glow-top-right"></div>
+        <div class="container">
+          <div class="reveal mb-16">
+            <p class="mono mb-4">09. Future Tech</p>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Prompt Engineering</h2>
+            <div class="h-1 w-20 bg-blue-500"></div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="reveal">
+              <p class="text-xl text-white mb-8 leading-relaxed">
+                As we enter the Fourth Industrial Revolution, AI is transforming how applications are built.
+              </p>
+              <p class="text-white/60 mb-8 leading-relaxed">
+                I focus on prompt engineering as a core skill, using advanced and structured prompts with sophisticated vocabulary and AI-assisted workflows to enable faster development and scalable innovation.
+              </p>
+              <div class="p-6 bg-blue-500/5 border border-blue-500/20 rounded-xl">
+                <p class="text-sm text-white/50 italic">"Prompt engineering is simplifying development, making the impossible possible."</p>
+              </div>
+            </div>
+            <div class="reveal" style="transition-delay: 200ms;">
+              <img src="https://picsum.photos/seed/ai-future/800/600" alt="Futuristic AI" class="rounded-2xl border border-white/10 grayscale hover:grayscale-0 transition-all" referrerPolicy="no-referrer" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="py-32 relative">
+        <div class="container">
+          <div class="reveal mb-16 text-center">
+            <p class="mono mb-4">10. Connection</p>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gradient">Get In Touch</h2>
+          </div>
+          <div class="card reveal" style="text-align: center; padding: 6rem 2rem;">
+            <h3 class="text-3xl font-bold mb-8">Let's build the future together.</h3>
+            <div class="flex flex-col items-center gap-12">
+              <a href="mailto:adeklosolomon@gmail.com" class="btn-primary" style="font-size: 1.1rem; padding: 1.2rem 2.5rem;">
+                adeklosolomon@gmail.com
+              </a>
+              <div class="flex gap-12 mono" style="font-size: 0.65rem;">
+                <a href="https://github.com/solomonyaw" target="_blank" style="color: var(--text-secondary); text-decoration: none;" class="hover:text-blue-400">Github</a>
+                <a href="https://www.instagram.com/solomonyaw.ghandi/" target="_blank" style="color: var(--text-secondary); text-decoration: none;" class="hover:text-blue-400">Instagram</a>
+                <a href="https://web.facebook.com/solomon.yaw" target="_blank" style="color: var(--text-secondary); text-decoration: none;" class="hover:text-blue-400">Facebook</a>
+              </div>
             </div>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="py-12 border-t border-white/5 bg-dark">
-      <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-        <div class="text-center md:text-left">
-          <div class="text-2xl font-display font-bold tracking-tighter mb-2">
-            SOLOMON<span class="text-primary">.</span>
-          </div>
-          <p class="text-slate-500 text-sm">© 2026 Solomon Yaw Adeklo. All rights reserved.</p>
-        </div>
-        
-        <div class="flex gap-8">
-          <a href="#" class="text-slate-500 hover:text-white transition-colors text-sm">Privacy Policy</a>
-          <a href="#" class="text-slate-500 hover:text-white transition-colors text-sm">Terms of Service</a>
-        </div>
-
-        <div class="flex gap-4">
-          <a href="https://web.facebook.com/solomon.yaw" target="_blank" class="text-slate-500 hover:text-white transition-colors"><i data-lucide="facebook"></i></a>
-          <a href="https://www.instagram.com/solomonyaw.ghandi/" target="_blank" class="text-slate-500 hover:text-white transition-colors"><i data-lucide="instagram"></i></a>
-          <a href="https://github.com/solomonyaw" target="_blank" class="text-slate-500 hover:text-white transition-colors"><i data-lucide="github"></i></a>
-        </div>
+    <footer class="py-12 border-t border-white/10">
+      <div class="container" style="text-align: center;">
+        <p class="mono text-white/30" style="font-size: 0.6rem;">
+          © <span id="year"></span> Solomon Yaw Adeklo. Designed for the future.
+        </p>
       </div>
     </footer>
 
-    <script type="module" src="/src/script.js"></script>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
-
