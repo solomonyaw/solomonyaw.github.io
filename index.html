@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solomon Yaw Adeklo | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="./src/index.css" />
+    
+  </head>
+  <body class="bg-dark text-slate-200">
+    <div id="custom-cursor"></div>
+    <div id="progress-bar"></div>
+
+    <div class="glow-bg">
+      <div class="glow-circle w-[500px] h-[500px] bg-primary/20 -top-20 -left-20"></div>
+      <div class="glow-circle w-[400px] h-[400px] bg-secondary/10 bottom-20 right-20"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-6 px-6 md:px-12">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <a href="#" class="text-2xl font-display font-bold tracking-tighter">
+          SOLOMON<span class="text-primary">.</span>
+        </a>
+        
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#about" class="text-sm font-medium hover:text-primary transition-colors">About</a>
+          <a href="#experience" class="text-sm font-medium hover:text-primary transition-colors">Experience</a>
+          <a href="#projects" class="text-sm font-medium hover:text-primary transition-colors">Projects</a>
+          <a href="#contact" class="text-sm font-medium hover:text-primary transition-colors">Contact</a>
+          <button id="dark-mode-toggle" class="p-2 glass-card hover:bg-white/10 transition-all">🌙</button>
+        </div>
+
+        <button id="menu-toggle" class="md:hidden p-2 glass-card">
+          <i data-lucide="menu" id="menu-icon"></i>
+          <i data-lucide="x" id="close-icon" class="hidden"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-dark/95 backdrop-blur-xl hidden md:hidden flex flex-col items-center justify-center gap-8">
+      <a href="#about" class="text-3xl font-display font-bold hover:text-primary transition-colors">About</a>
+      <a href="#experience" class="text-3xl font-display font-bold hover:text-primary transition-colors">Experience</a>
+      <a href="#projects" class="text-3xl font-display font-bold hover:text-primary transition-colors">Projects</a>
+      <a href="#contact" class="text-3xl font-display font-bold hover:text-primary transition-colors">Contact</a>
+    </div>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="hero" class="min-h-screen flex items-center justify-center pt-20 px-6">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+          <div class="reveal">
+            <div class="inline-block px-4 py-2 glass-card text-primary text-xs font-bold tracking-widest uppercase mb-6">
+              Available for Collaboration
+            </div>
+            <h1 class="text-6xl md:text-8xl font-bold tracking-tighter leading-none mb-8">
+              Solomon Yaw <span class="text-gradient">Adeklo</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-slate-400 font-medium mb-8 max-w-xl leading-relaxed">
+              Software Developer | AI Enthusiast | Prompt Engineering Expert | Systems Theorist | Data Analyst
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a href="#contact" class="px-8 py-4 bg-primary text-white font-bold rounded-full hover:bg-primary/80 transition-all shadow-lg shadow-primary/20">
+                Let's Talk
+              </a>
+              <a href="#projects" class="px-8 py-4 glass-card font-bold rounded-full hover:bg-white/10 transition-all">
+                View Work
+              </a>
+            </div>
+            <div class="mt-12 flex gap-6">
+              <a href="https://web.facebook.com/solomon.yaw" target="_blank" class="text-slate-500 hover:text-primary transition-colors"><i data-lucide="facebook"></i></a>
+              <a href="https://www.instagram.com/solomonyaw.ghandi/" target="_blank" class="text-slate-500 hover:text-accent transition-colors"><i data-lucide="instagram"></i></a>
+              <a href="https://github.com/solomonyaw" target="_blank" class="text-slate-500 hover:text-white transition-colors"><i data-lucide="github"></i></a>
+            </div>
+          </div>
+          
+          <div class="relative reveal">
+            <div class="aspect-square rounded-3xl overflow-hidden glass-card p-2">
+              <img src="https://picsum.photos/seed/solomon/800/800" alt="Solomon Yaw Adeklo" class="w-full h-full object-cover rounded-2xl grayscale hover:grayscale-0 transition-all duration-700" referrerPolicy="no-referrer" />
+            </div>
+            <div class="absolute -bottom-6 -left-6 glass-card p-6 reveal">
+              <div class="text-4xl font-bold text-primary">5+</div>
+              <div class="text-xs font-bold text-slate-500 uppercase tracking-widest">Years Experience</div>
+            </div>
+            <div class="absolute -top-6 -right-6 glass-card p-6 reveal">
+              <div class="text-4xl font-bold text-secondary">50+</div>
+              <div class="text-xs font-bold text-slate-500 uppercase tracking-widest">Projects Completed</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="section-padding bg-darker">
+        <div class="max-w-7xl mx-auto">
+          <div class="grid lg:grid-cols-2 gap-20 items-center">
+            <div class="reveal">
+              <h2 class="text-5xl font-bold mb-8">Driven by <span class="text-primary">Purpose</span></h2>
+              <p class="text-lg text-slate-400 leading-relaxed mb-6">
+                I am a multidisciplinary technology professional driven by a deep passion for solving real-world problems through software, systems thinking, and artificial intelligence. My journey spans from grassroots practical work to advanced digital innovation, shaping a unique perspective on technology and society.
+              </p>
+              <p class="text-lg text-slate-400 leading-relaxed mb-8">
+                With a background that blends technical expertise with entrepreneurial spirit, I approach every project as a system to be optimized and a story to be told.
+              </p>
+              <div class="grid grid-cols-2 gap-8">
+                <div>
+                  <h4 class="text-white font-bold mb-2">Systems Thinking</h4>
+                  <p class="text-sm text-slate-500">Holistic approach to problem solving and architecture.</p>
+                </div>
+                <div>
+                  <h4 class="text-white font-bold mb-2">AI Innovation</h4>
+                  <p class="text-sm text-slate-500">Leveraging LLMs and prompt engineering for efficiency.</p>
+                </div>
+              </div>
+            </div>
+            <div class="glass-card p-12 relative reveal">
+              <div class="glow-circle w-[200px] h-[200px] bg-accent/20 -bottom-10 -left-10"></div>
+              <blockquote class="text-2xl font-display italic text-white leading-relaxed relative z-10">
+                "Technology is not just a tool, but a medium through which we can reshape our reality and solve the most complex challenges of our time."
+              </blockquote>
+              <div class="mt-8 flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                  <i data-lucide="quote" class="text-primary"></i>
+                </div>
+                <div>
+                  <p class="text-white font-bold">Solomon Yaw Adeklo</p>
+                  <p class="text-xs text-slate-500 uppercase tracking-widest">Visionary Developer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education Section -->
+      <section id="education" class="section-padding bg-dark">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center mb-20 reveal">
+            <h2 class="text-5xl font-bold mb-6">Academic <span class="text-primary">Background</span></h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Foundations of my technical knowledge and academic excellence.</p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="glass-card p-10 hover:border-primary/50 transition-all reveal">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <i data-lucide="graduation-cap" class="text-primary"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">BSc. Information Technology</h3>
+                  <p class="text-primary text-sm">University of Cape Coast</p>
+                </div>
+              </div>
+              <p class="text-slate-400 mb-6">Focused on software engineering, database management, and systems analysis. Graduated with honors.</p>
+              <span class="px-4 py-2 rounded-full bg-white/5 text-xs font-bold text-slate-500 uppercase tracking-widest">2018 - 2022</span>
+            </div>
+
+            <div class="glass-card p-10 hover:border-secondary/50 transition-all reveal">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center">
+                  <i data-lucide="school" class="text-secondary"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">WASSCE</h3>
+                  <p class="text-secondary text-sm">Adisadel College</p>
+                </div>
+              </div>
+              <p class="text-slate-400 mb-6">General Science background with a strong focus on mathematics and physics.</p>
+              <span class="px-4 py-2 rounded-full bg-white/5 text-xs font-bold text-slate-500 uppercase tracking-widest">2014 - 2017</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section id="experience" class="section-padding">
+        <div class="max-w-7xl mx-auto">
+          <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+            <div class="reveal">
+              <h2 class="text-5xl font-bold mb-4">Professional <span class="text-secondary">Journey</span></h2>
+              <p class="text-slate-400 max-w-xl">A timeline of my growth, from foundational roles to leadership in technology and innovation.</p>
+            </div>
+          </div>
+
+          <div class="space-y-12">
+            <!-- Experience Item 1 -->
+            <div class="glass-card p-8 md:p-12 hover:border-secondary/50 transition-all group reveal">
+              <div class="flex flex-col md:flex-row justify-between gap-6">
+                <div class="flex gap-6">
+                  <div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center shrink-0 group-hover:bg-secondary/20 transition-all">
+                    <i data-lucide="briefcase" class="text-secondary"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Software Developer</h3>
+                    <p class="text-secondary font-medium mb-4">Adeklo Systems</p>
+                    <ul class="space-y-3 text-slate-400">
+                      <li class="flex gap-3"><span class="text-secondary">•</span> Designing and implementing scalable software solutions.</li>
+                      <li class="flex gap-3"><span class="text-secondary">•</span> Leading full-stack development projects with a focus on performance.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <span class="px-4 py-2 rounded-full bg-white/5 text-xs font-bold text-slate-400 uppercase tracking-widest">2021 - Present</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Experience Item 2 -->
+            <div class="glass-card p-8 md:p-12 hover:border-primary/50 transition-all group reveal">
+              <div class="flex flex-col md:flex-row justify-between gap-6">
+                <div class="flex gap-6">
+                  <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-all">
+                    <i data-lucide="terminal" class="text-primary"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-2xl font-bold text-white mb-2">IT Support & Systems Admin</h3>
+                    <p class="text-primary font-medium mb-4">Freelance / Contract</p>
+                    <ul class="space-y-3 text-slate-400">
+                      <li class="flex gap-3"><span class="text-primary">•</span> Managed network infrastructure and provided technical support.</li>
+                      <li class="flex gap-3"><span class="text-primary">•</span> Optimized system workflows for various small businesses.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <span class="px-4 py-2 rounded-full bg-white/5 text-xs font-bold text-slate-400 uppercase tracking-widest">2018 - 2021</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="section-padding bg-darker">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center mb-20 reveal">
+            <h2 class="text-5xl font-bold mb-6">Featured <span class="text-accent">Projects</span></h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">A collection of work that demonstrates my technical skills and problem-solving approach.</p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project 1 -->
+            <div class="glass-card overflow-hidden group reveal">
+              <div class="h-64 overflow-hidden">
+                <img src="https://picsum.photos/seed/project1/800/600" alt="AI Dashboard" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer" />
+              </div>
+              <div class="p-8">
+                <div class="flex gap-2 mb-4">
+                  <span class="text-[10px] font-bold px-2 py-1 bg-primary/20 text-primary rounded uppercase tracking-widest">React</span>
+                  <span class="text-[10px] font-bold px-2 py-1 bg-secondary/20 text-secondary rounded uppercase tracking-widest">AI</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">AI-Powered Analytics Dashboard</h3>
+                <p class="text-slate-400 text-sm mb-6">A sophisticated dashboard leveraging LLMs to provide real-time data insights and predictive analytics.</p>
+                <a href="#" class="inline-flex items-center gap-2 text-primary font-bold text-sm hover:gap-4 transition-all">
+                  View Project <i data-lucide="arrow-right" size="16"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="glass-card overflow-hidden group reveal">
+              <div class="h-64 overflow-hidden">
+                <img src="https://picsum.photos/seed/project2/800/600" alt="Systems Arch" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer" />
+              </div>
+              <div class="p-8">
+                <div class="flex gap-2 mb-4">
+                  <span class="text-[10px] font-bold px-2 py-1 bg-accent/20 text-accent rounded uppercase tracking-widest">Node.js</span>
+                  <span class="text-[10px] font-bold px-2 py-1 bg-primary/20 text-primary rounded uppercase tracking-widest">Systems</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Enterprise Resource Planner</h3>
+                <p class="text-slate-400 text-sm mb-6">A custom ERP system designed for small to medium enterprises to streamline operations and inventory.</p>
+                <a href="#" class="inline-flex items-center gap-2 text-primary font-bold text-sm hover:gap-4 transition-all">
+                  View Project <i data-lucide="arrow-right" size="16"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="glass-card overflow-hidden group reveal">
+              <div class="h-64 overflow-hidden">
+                <img src="https://picsum.photos/seed/project3/800/600" alt="Data Viz" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer" />
+              </div>
+              <div class="p-8">
+                <div class="flex gap-2 mb-4">
+                  <span class="text-[10px] font-bold px-2 py-1 bg-secondary/20 text-secondary rounded uppercase tracking-widest">Python</span>
+                  <span class="text-[10px] font-bold px-2 py-1 bg-accent/20 text-accent rounded uppercase tracking-widest">Data</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Predictive Market Modeler</h3>
+                <p class="text-slate-400 text-sm mb-6">A data analysis tool that uses historical market data to predict future trends with high accuracy.</p>
+                <a href="#" class="inline-flex items-center gap-2 text-primary font-bold text-sm hover:gap-4 transition-all">
+                  View Project <i data-lucide="arrow-right" size="16"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Entrepreneurship Section -->
+      <section id="entrepreneurship" class="section-padding">
+        <div class="max-w-7xl mx-auto">
+          <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="reveal">
+              <h2 class="text-5xl font-bold mb-8">Entrepreneurial <span class="text-primary">Spirit</span></h2>
+              <p class="text-lg text-slate-400 leading-relaxed mb-6">
+                Beyond code, I am an entrepreneur at heart. I've founded and led ventures that bridge the gap between technology and practical utility.
+              </p>
+              <div class="space-y-6">
+                <div class="flex gap-4">
+                  <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                    <i data-lucide="rocket" class="text-primary"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-white font-bold mb-1">Adeklo Systems</h4>
+                    <p class="text-sm text-slate-500">Providing custom software and IT infrastructure solutions.</p>
+                  </div>
+                </div>
+                <div class="flex gap-4">
+                  <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center shrink-0">
+                    <i data-lucide="users" class="text-secondary"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-white font-bold mb-1">Community Tech Lead</h4>
+                    <p class="text-sm text-slate-500">Mentoring young developers and fostering local innovation.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="reveal">
+              <div class="rounded-3xl overflow-hidden glass-card p-4">
+                <img src="https://picsum.photos/seed/startup/800/600" alt="Entrepreneurship" class="w-full h-full object-cover rounded-2xl opacity-80" referrerPolicy="no-referrer" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Books Section -->
+      <section id="books" class="section-padding bg-darker">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center mb-20 reveal">
+            <h2 class="text-5xl font-bold mb-6">Literary <span class="text-secondary">Works</span></h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Sharing knowledge through writing. Books authored by Solomon Yaw Adeklo.</p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-12">
+            <!-- Book 1 -->
+            <div class="text-center reveal">
+              <div class="aspect-[3/4] glass-card p-4 mb-6 group cursor-pointer">
+                <div class="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 rounded-xl flex flex-col items-center justify-center p-8 text-center group-hover:scale-105 transition-transform">
+                  <i data-lucide="book-open" class="text-primary mb-4" size="48"></i>
+                  <h3 class="text-xl font-bold text-white">The Systems Mindset</h3>
+                </div>
+              </div>
+              <h4 class="font-bold text-white mb-2">The Systems Mindset</h4>
+              <p class="text-xs text-slate-500 uppercase font-bold tracking-widest">By Solomon Yaw Adeklo</p>
+            </div>
+
+            <!-- Book 2 -->
+            <div class="text-center reveal">
+              <div class="aspect-[3/4] glass-card p-4 mb-6 group cursor-pointer">
+                <div class="w-full h-full bg-gradient-to-br from-secondary/20 to-accent/20 rounded-xl flex flex-col items-center justify-center p-8 text-center group-hover:scale-105 transition-transform">
+                  <i data-lucide="cpu" class="text-secondary mb-4" size="48"></i>
+                  <h3 class="text-xl font-bold text-white">AI & The Future of Work</h3>
+                </div>
+              </div>
+              <h4 class="font-bold text-white mb-2">AI & The Future of Work</h4>
+              <p class="text-xs text-slate-500 uppercase font-bold tracking-widest">By Solomon Yaw Adeklo</p>
+            </div>
+
+            <!-- Book 3 -->
+            <div class="text-center reveal">
+              <div class="aspect-[3/4] glass-card p-4 mb-6 group cursor-pointer">
+                <div class="w-full h-full bg-gradient-to-br from-accent/20 to-primary/20 rounded-xl flex flex-col items-center justify-center p-8 text-center group-hover:scale-105 transition-transform">
+                  <i data-lucide="code" class="text-accent mb-4" size="48"></i>
+                  <h3 class="text-xl font-bold text-white">Modern Dev Workflows</h3>
+                </div>
+              </div>
+              <h4 class="font-bold text-white mb-2">Modern Dev Workflows</h4>
+              <p class="text-xs text-slate-500 uppercase font-bold tracking-widest">By Solomon Yaw Adeklo</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Inspiration Section -->
+      <section id="inspiration" class="section-padding bg-dark">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center mb-20 reveal">
+            <h2 class="text-5xl font-bold mb-6">Daily <span class="text-accent">Inspiration</span></h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Quotes and philosophies that drive my work and life.</p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-12">
+            <div class="glass-card p-12 relative reveal">
+              <i data-lucide="quote" class="absolute top-8 right-8 text-white/5" size="80"></i>
+              <p class="text-2xl font-display italic text-white leading-relaxed mb-8">
+                "The only way to do great work is to love what you do."
+              </p>
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                  <i data-lucide="user" class="text-primary" size="16"></i>
+                </div>
+                <div>
+                  <p class="text-white font-bold">Steve Jobs</p>
+                  <p class="text-xs text-slate-500 uppercase tracking-widest">Co-founder, Apple Inc.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-card p-12 relative reveal">
+              <i data-lucide="quote" class="absolute top-8 right-8 text-white/5" size="80"></i>
+              <p class="text-2xl font-display italic text-white leading-relaxed mb-8">
+                "Innovation distinguishes between a leader and a follower."
+              </p>
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center">
+                  <i data-lucide="user" class="text-secondary" size="16"></i>
+                </div>
+                <div>
+                  <p class="text-white font-bold">Steve Jobs</p>
+                  <p class="text-xs text-slate-500 uppercase tracking-widest">Co-founder, Apple Inc.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="section-padding">
+        <div class="max-w-7xl mx-auto">
+          <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="order-2 lg:order-1 reveal">
+              <div class="space-y-8">
+                <div>
+                  <h3 class="text-xs font-bold text-primary uppercase tracking-widest mb-4">PROGRAMMING</h3>
+                  <div class="flex flex-wrap gap-3">
+                    <span class="px-4 py-2 glass-card text-sm font-medium hover:border-primary/50 transition-colors">HTML</span>
+                    <span class="px-4 py-2 glass-card text-sm font-medium hover:border-primary/50 transition-colors">CSS</span>
+                    <span class="px-4 py-2 glass-card text-sm font-medium hover:border-primary/50 transition-colors">SCSS</span>
+                    <span class="px-4 py-2 glass-card text-sm font-medium hover:border-primary/50 transition-colors">JavaScript</span>
+                    <span class="px-4 py-2 glass-card text-sm font-medium hover:border-primary/50 transition-colors">C++</span>
+                    <span class="px-4 py-2 glass-card text-sm font-medium hover:border-primary/50 transition-colors">C#</span>
+                    <span class="px-4 py-2 glass-card text-sm font-medium hover:border-primary/50 transition-colors">PHP</span>
+                    <span class="px-4 py-2 glass-card text-sm font-medium hover:border-primary/50 transition-colors">Python</span>
+                    <span class="px-4 py-2 glass-card text-sm font-medium hover:border-primary/50 transition-colors">Java</span>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="text-xs font-bold text-secondary uppercase tracking-widest mb-4">DATA & ANALYTICS</h3>
+                  <div class="flex flex-wrap gap-3">
+                    <span class="px-4 py-2 glass-card text-sm font-medium hover:border-secondary/50 transition-colors">MySQL</span>
+                    <span class="px-4 py-2 glass-card text-sm font-medium hover:border-secondary/50 transition-colors">Pandas</span>
+                    <span class="px-4 py-2 glass-card text-sm font-medium hover:border-secondary/50 transition-colors">Seaborn</span>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="text-xs font-bold text-accent uppercase tracking-widest mb-4">OTHER EXPERTISE</h3>
+                  <div class="flex flex-wrap gap-3">
+                    <span class="px-4 py-2 glass-card text-sm font-medium hover:border-accent/50 transition-colors">System Analysis</span>
+                    <span class="px-4 py-2 glass-card text-sm font-medium hover:border-accent/50 transition-colors">Multimedia Design</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="order-1 lg:order-2 reveal">
+              <div class="glass-card p-10 border-primary/20 relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-10">
+                  <i data-lucide="cpu" size="120"></i>
+                </div>
+                <h2 class="text-4xl font-bold mb-6">Prompt <span class="text-primary">Engineering</span></h2>
+                <p class="text-slate-300 mb-8 leading-relaxed">
+                  Solomon is currently focused on prompt engineering as a core skill. He believes the world is entering the Fourth Industrial Revolution where AI transforms how applications are built.
+                </p>
+                <div class="space-y-4">
+                  <div class="flex items-center gap-3 text-slate-400">
+                    <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                    Advanced and structured prompts
+                  </div>
+                  <div class="flex items-center gap-3 text-slate-400">
+                    <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                    Sophisticated vocabulary
+                  </div>
+                  <div class="flex items-center gap-3 text-slate-400">
+                    <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                    AI-assisted workflows
+                  </div>
+                  <div class="flex items-center gap-3 text-slate-400">
+                    <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                    Faster development & Scalable innovation
+                  </div>
+                </div>
+                <div class="mt-10 rounded-2xl overflow-hidden h-48">
+                  <img src="https://picsum.photos/seed/ai-future/800/400" alt="AI Future" class="w-full h-full object-cover opacity-50 grayscale hover:grayscale-0 transition-all duration-700" referrerPolicy="no-referrer" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="section-padding bg-darker">
+        <div class="max-w-7xl mx-auto">
+          <div class="glass-card p-12 md:p-20 relative overflow-hidden reveal">
+            <div class="glow-circle w-[300px] h-[300px] bg-primary/10 -top-20 -right-20"></div>
+            
+            <div class="grid lg:grid-cols-2 gap-16 relative z-10">
+              <div>
+                <h2 class="text-5xl font-bold mb-6">Let's <span class="text-primary">Connect</span></h2>
+                <p class="text-slate-400 text-lg mb-12">
+                  Interested in collaboration or have a complex problem to solve? Reach out through any of the platforms below.
+                </p>
+                
+                <div class="space-y-6">
+                  <a href="https://web.facebook.com/solomon.yaw" target="_blank" class="flex items-center gap-4 group">
+                    <div class="p-4 bg-white/5 rounded-2xl group-hover:bg-primary/20 transition-all">
+                      <i data-lucide="facebook" class="text-slate-400 group-hover:text-primary"></i>
+                    </div>
+                    <div>
+                      <p class="text-xs font-bold text-slate-500 uppercase">Facebook</p>
+                      <p class="text-white font-medium">solomon.yaw</p>
+                    </div>
+                  </a>
+                  <a href="https://www.instagram.com/solomonyaw.ghandi/" target="_blank" class="flex items-center gap-4 group">
+                    <div class="p-4 bg-white/5 rounded-2xl group-hover:bg-accent/20 transition-all">
+                      <i data-lucide="instagram" class="text-slate-400 group-hover:text-accent"></i>
+                    </div>
+                    <div>
+                      <p class="text-xs font-bold text-slate-500 uppercase">Instagram</p>
+                      <p class="text-white font-medium">@solomonyaw.ghandi</p>
+                    </div>
+                  </a>
+                  <a href="https://github.com/solomonyaw" target="_blank" class="flex items-center gap-4 group">
+                    <div class="p-4 bg-white/5 rounded-2xl group-hover:bg-white/20 transition-all">
+                      <i data-lucide="github" class="text-slate-400 group-hover:text-white"></i>
+                    </div>
+                    <div>
+                      <p class="text-xs font-bold text-slate-500 uppercase">GitHub</p>
+                      <p class="text-white font-medium">solomonyaw</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <form class="space-y-6" onsubmit="event.preventDefault()">
+                <div class="grid sm:grid-cols-2 gap-6">
+                  <div class="space-y-2">
+                    <label class="text-xs font-bold text-slate-500 uppercase">Full Name</label>
+                    <input type="text" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-primary outline-none transition-all" placeholder="John Doe" />
+                  </div>
+                  <div class="space-y-2">
+                    <label class="text-xs font-bold text-slate-500 uppercase">Email Address</label>
+                    <input type="email" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-primary outline-none transition-all" placeholder="john@example.com" />
+                  </div>
+                </div>
+                <div class="space-y-2">
+                  <label class="text-xs font-bold text-slate-500 uppercase">Subject</label>
+                  <input type="text" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-primary outline-none transition-all" placeholder="Project Inquiry" />
+                </div>
+                <div class="space-y-2">
+                  <label class="text-xs font-bold text-slate-500 uppercase">Message</label>
+                  <textarea rows="5" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-primary outline-none transition-all resize-none" placeholder="Tell me about your project..."></textarea>
+                </div>
+                <button class="w-full py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary/80 transition-all shadow-lg shadow-primary/20">
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="py-12 border-t border-white/5 bg-dark">
+      <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="text-center md:text-left">
+          <div class="text-2xl font-display font-bold tracking-tighter mb-2">
+            SOLOMON<span class="text-primary">.</span>
+          </div>
+          <p class="text-slate-500 text-sm">© 2026 Solomon Yaw Adeklo. All rights reserved.</p>
+        </div>
+        
+        <div class="flex gap-8">
+          <a href="#" class="text-slate-500 hover:text-white transition-colors text-sm">Privacy Policy</a>
+          <a href="#" class="text-slate-500 hover:text-white transition-colors text-sm">Terms of Service</a>
+        </div>
+
+        <div class="flex gap-4">
+          <a href="https://web.facebook.com/solomon.yaw" target="_blank" class="text-slate-500 hover:text-white transition-colors"><i data-lucide="facebook"></i></a>
+          <a href="https://www.instagram.com/solomonyaw.ghandi/" target="_blank" class="text-slate-500 hover:text-white transition-colors"><i data-lucide="instagram"></i></a>
+          <a href="https://github.com/solomonyaw" target="_blank" class="text-slate-500 hover:text-white transition-colors"><i data-lucide="github"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/script.js"></script>
+  </body>
+</html>
+
