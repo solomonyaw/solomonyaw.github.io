@@ -13,6 +13,49 @@
   --font-mono: 'JetBrains Mono', monospace;
 }
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Responsive Flex Layout</title>
+
+<style>
+  .container {
+    display: flex;
+    gap: 20px;
+  }
+
+  .box {
+    flex: 1;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  /* Inline Media Query for Mobile */
+  @media (max-width: 768px) {
+    .reveal {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="box">Item 1</div>
+  <div class="box">Item 2</div>
+  <div class="box">Item 3</div>
+</div>
+
+</body>
+</html>
+
 * {
   margin: 0;
   padding: 0;
