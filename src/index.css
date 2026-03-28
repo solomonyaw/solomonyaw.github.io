@@ -465,4 +465,56 @@ body {
 .h-3 { height: 0.75rem; }
 .aspect-\[4\/5\] { aspect-ratio: 4 / 5; }
 .aspect-\[2\/3\] { aspect-ratio: 2 / 3; }
-.object-cover { object-fit: cover; }
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .text-8xl { font-size: 4.5rem; }
+  .text-6xl { font-size: 3.5rem; }
+  .py-32 { padding-top: 6rem; padding-bottom: 6rem; }
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 1.5rem; }
+  .text-8xl { font-size: 3.5rem; }
+  .text-6xl { font-size: 2.75rem; }
+  .text-5xl { font-size: 2.25rem; }
+  .text-4xl { font-size: 1.875rem; }
+  .py-32 { padding-top: 4rem; padding-bottom: 4rem; }
+  .py-20 { padding-top: 3rem; padding-bottom: 3rem; }
+  
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .md\:grid-cols-2, .md\:grid-cols-3, .lg\:grid-cols-4 {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .card { padding: 1.5rem; }
+  
+  /* Hero adjustments */
+  section.min-h-screen {
+    padding-top: 6rem;
+    text-align: center;
+  }
+  
+  section.min-h-screen .container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-8xl { font-size: 2.75rem; }
+  .text-6xl { font-size: 2.25rem; }
+  .text-5xl { font-size: 1.875rem; }
+  .text-4xl { font-size: 1.5rem; }
+  .mono { font-size: 0.65rem; }
+  
+  .container { padding: 0 1rem; }
+}
